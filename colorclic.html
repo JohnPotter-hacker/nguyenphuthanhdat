@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colorclick.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "centre">
+        <h1 id = "changecolor">Hello</h1>
+        <button id = "c">Click me !</button>
+    </div>
+    <script>
+        const btn = document.getElementById("c");
+        btn.addEventListener("click",myFunc);
+        const color = ["red", "blue","orange", "black","pink","purple"]
+        lastColor = -1; randomColor = -1;
+        function myFunc(){
+            background = document.body;
+            h1 = document.getElementById("changecolor");
+            while(randomColor == lastColor) 
+                randomColor = Math.floor(Math.random()*(color.length-1))+0;
+            lastColor = randomColor;
+            background.style = "background: " + color[randomColor];
+            h1.style = "color: " + color[color.length - randomColor - 1];
+            console.log(color[randomColor]);
+        }
+    </script>
+</body>
+</html>
